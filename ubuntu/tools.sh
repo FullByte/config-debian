@@ -8,6 +8,9 @@ sudo apt install filezilla
 sudo apt install nextcloud-desktop
 sudo apt install virtualbox
 sudo apt install python3-pip
+sudo apt install gnome-tweaks
+sudo apt install gnome-shell-extensions
+sudo apt install source-highlight
 
 ## Joplin
 sudo apt install libfuse2
