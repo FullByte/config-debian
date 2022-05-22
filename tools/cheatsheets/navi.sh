@@ -11,7 +11,7 @@ then
     echo '' >> ~/.bashrc
     echo '### NAVI ###' >> ~/.bashrc
     echo 'alias navi="~/.cargo/bin/navi"' >> ~/.bashrc
-    echo 'eval "\$(navi widget bash)"' >> ~/.bashrc
+    echo 'eval "$(navi widget bash)"' >> ~/.bashrc
 else
 	echo "$bashrc file does not exist. Skipped."
 fi
@@ -23,7 +23,7 @@ then
     echo '' >> ~/.zshrc
     echo '### NAVI ###' >> ~/.zshrc
     echo 'alias navi="~/.cargo/bin/navi"' >> ~/.zshrc
-    echo 'eval "\$(navi widget zsh)"' >> ~/.zshrc
+    echo 'eval "$(navi widget zsh)"' >> ~/.zshrc
 else
 	echo "$zshrc file does not exist. Skipped."
 fi
