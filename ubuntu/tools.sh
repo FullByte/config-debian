@@ -69,3 +69,35 @@ wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf
 sudo mv PowerlineSymbols.otf /usr/share/fonts/
 sudo fc-cache -vf
 sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
+
+#Docker
+sudo apt-get install ca-certificates curl gnupg lsb-release
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+# Mono
+sudo apt install gnupg ca-certificates
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+sudo apt update
+
+# Dotnet Core
+wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb
+sudo apt-get update
+sudo apt-get install -y apt-transport-https
+sudo apt-get update
+sudo apt-get install -y dotnet-sdk-6.0
+
+# Powershell and Azure Modules and Azure CLI
+sudo snap install powershell --classic
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+powershell -Command "Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force"
+powershell -Command "Install-Module -Name AzureAD -Scope CurrentUser -Repository PSGallery -Force"
+
+#Download latest deb release and install it
+sudo apt-get install ./docker-desktop-4.8.2-amd64.deb
