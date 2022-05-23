@@ -15,3 +15,9 @@ git clone git@github.com:FullByte/scripts.git
 git clone git@github.com:FullByte/config-windows.git
 git clone git@github.com:FullByte/config-debian.git
 
+# Oh my Bash
+bash -c "$(wget https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh -O -)"
+wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
+sudo mv PowerlineSymbols.otf /usr/share/fonts/
+sudo fc-cache -vf
+sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
