@@ -11,6 +11,7 @@ sudo apt install python3-pip
 sudo apt install gnome-tweaks
 sudo apt install gnome-shell-extensions
 sudo apt install source-highlight
+sudo apt install plocate
 
 ## Joplin
 sudo apt install libfuse2
