@@ -79,5 +79,42 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 powershell -Command "Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force"
 powershell -Command "Install-Module -Name AzureAD -Scope CurrentUser -Repository PSGallery -Force"
 
-#Download latest deb release and install it
-sudo apt-get install ./docker-desktop-4.8.2-amd64.deb
+# xrdp
+sudo apt update
+sudo apt install tasksel
+sudo apt install xrdp # start RDP
+sudo systemctl status xrdp #verify
+
+# TeamViewer
+wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
+sudo apt install ./teamviewer_amd64.deb
+teamviewer
+teamviewer --passwd password
+teamviewer daemon restart
+teamviewer -info
+teamviewer license accept
+
+# Node.js
+sudo apt update
+sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt -y install nodejs
+sudo apt -y  install gcc g++ make
+node --version
+npm --version
+
+# Install Wine
+sudo dpkg --add-architecture i386
+wget -nc https://dl.winehq.org/wine-builds/winehq.key
+sudo apt-key add winehq.key
+deb https://dl.winehq.org/wine-builds/debian/ buster main
+sudo apt update
+sudo apt install --install-recommends winehq-stable
+
+# Make Ubuntu Desktop nice
+# Get Video Codecs
+sudo apt install ubuntu-restricted-extras ubuntu-restricted-addons
+# Get Compiz and Docky
+sudo apt install gnome-session-flashback compiz compiz-core compiz-plugins compiz-plugins-default compiz-plugins-extra compiz-plugins-main compiz-plugins-main-default compiz-plugins-main-dev compizconfig-settings-manager docky
+#Gnome Tweak
+sudo apt install gnome-tweaks gnome-tweak-tool
