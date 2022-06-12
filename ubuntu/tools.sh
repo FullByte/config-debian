@@ -12,6 +12,7 @@ sudo apt install gnome-tweaks
 sudo apt install gnome-shell-extensions
 sudo apt install source-highlight
 sudo apt install plocate
+sudo apt install libreoffice
 
 ## Joplin
 sudo apt install libfuse2
