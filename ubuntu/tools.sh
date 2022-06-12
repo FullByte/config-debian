@@ -13,6 +13,8 @@ sudo apt install gnome-shell-extensions
 sudo apt install source-highlight
 sudo apt install plocate
 sudo apt install libreoffice
+sudo apt install wine64
+sudo apt install qbittorrent
 
 ## Joplin
 sudo apt install libfuse2
